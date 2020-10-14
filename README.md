@@ -1,1 +1,1 @@
-# basic_internet_technology
+# Первая лабораторная работа
