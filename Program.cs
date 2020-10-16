@@ -25,7 +25,7 @@ namespace lab {
             }
 
             List<double> roots = default;
-            double res1 = (-coef.b + D) / (2.0 * coef.a);
+            double res1 = (-coef.b + Math.Sqrt(D)) / (2.0 * coef.a);
 
             if (res1 >= 0) {
                 double ans = Math.Sqrt(res1);
@@ -40,7 +40,7 @@ namespace lab {
                 return roots;
             }
 
-            double res2 = (-coef.b - D) / (2.0 * coef.a);
+            double res2 = (-coef.b - Math.Sqrt(D)) / (2.0 * coef.a);
 
             if (res2 >= 0) {
                 double ans = Math.Sqrt(res2);
