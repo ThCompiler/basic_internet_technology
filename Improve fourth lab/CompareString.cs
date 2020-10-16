@@ -18,7 +18,7 @@ namespace CompareString {
             }
 
             for (int i = 1; i <= s1.Length; ++i) {
-                for (int j = i; j <= s2.Length; ++j) {
+                for (int j = 1; j <= s2.Length; ++j) {
                     D[1][j] = Math.Min(D[0][j] + 1, Math.Min(D[1][j - 1] + 1,
                                     D[0][j - 1] + (s1[i - 1] == s2[j - 1] ? 0 : 1)));
                 }
@@ -60,7 +60,7 @@ namespace CompareString {
             }
 
             for (int i = 2; i <= s1.Length; ++i) {
-                for (int j = i - 2; j <= s2.Length; ++j) {
+                for (int j = 1; j <= s2.Length; ++j) {
                     if (j == 0) continue;
 
                     D[2][j] = Math.Min(D[1][j] + 1, Math.Min(D[2][j - 1] + 1,
@@ -75,7 +75,7 @@ namespace CompareString {
                 D[2][0] = i + 1;
 
                 if (use_optimaze) {
-                    if (D[1][Math.Min(i, size - 1)] > k) {
+                    if (D[2][Math.Min(i, size - 1)] > k) {
                         return k;
                     }
                 }
